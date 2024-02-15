@@ -3,16 +3,60 @@ html, body{
     height: 800px;
     margin: 0;
     overflow: hidden;
-    background-image: url(../images/uts-pride-events-hero-1.jpg);
+    background-image: url(../images/rainbow.jpg);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+}
+.header_div{
+    position: relative;
+    top: 0;
+
+}
+.content_div{
+    position: relative;
+    top:20%;
+}
+.footer_div{
+    position: relative;
+    top:90%
 }
 
 .container{
+    position: relative;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+}
+.item_container{
+    display: inline-block;
+    width : 400px;
+    height : 500px;
+    margin: 100px;
+    margin-top: 50px;
+    background-color: white;
+    border-radius: 30px;
+    text-align: center;
     vertical-align: middle;
 }
-.button_class{
-    text-align: center;
+.item_img{
+    position: relative;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 350px;
+    height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+.item_title{
+    position: relative;
+    margin: auto;
+    width:350px;
+    height: 100px;
+    margin-top:10px;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
 }

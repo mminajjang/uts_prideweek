@@ -1,9 +1,16 @@
+var session = new QiSession();
 
 
-RobotUtils.onService(function(ALTabletService){
-    var ip = RobotUtils.robotIp;
-    var uuid = 'prideweek'
-    var url = "http://" + ip + "/apps/" + uuid;
+$(document).ready( function(){
 
-    ALTabletService.showWebview(url);
+    $("#button1").click( function(){
+        $("#button1").hide();
+        $("#button2").show();
+        // $('body').css("background-image","url(images/uts-pride-logo.png)");
+    });
+    $("#button2").click( function(){
+        $("#button1").show();
+        $("#button2").hide();
+        // $('body').css("background-image","url(images/uts-pride-logo.png)");
+    });
 });
