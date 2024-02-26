@@ -1,16 +1,13 @@
-var session = new QiSession();
+var audio = new Audio('change_screen.ogg');
+// var session = new QiSession();
 
 
 $(document).ready( function(){
-
-    $("#button1").click( function(){
-        $("#button1").hide();
-        $("#button2").show();
-        // $('body').css("background-image","url(images/uts-pride-logo.png)");
+    $('button').click(function(){
+        audio.play();
     });
-    $("#button2").click( function(){
-        $("#button1").show();
-        $("#button2").hide();
-        // $('body').css("background-image","url(images/uts-pride-logo.png)");
+    $('button').click(function(){
+        $("#"+$(this).attr('id')).css('filter', 'invert(100)%');
     });
+    
 });

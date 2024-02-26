@@ -5,22 +5,74 @@ html, body{
     overflow: hidden;
     background-image: url(../images/rainbow.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 1280px 800px;
 }
+/* FONTS */
+
+@font-face {
+    font-family: "Kode_Mono";
+    src: url(../fonts/Kode_Mono/static/KodeMono-Bold.ttf);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Silkscreen";
+    src: url(../fonts/Silkscreen/Silkscreen-Regular.ttf);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "SilkscreenBold";
+    src: url(../fonts/Silkscreen/Silkscreen-Bold.ttf);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "micro";
+    src: url(../fonts/Micro_5/Micro5-Regular.ttf);
+}
+
+@font-face {
+    font-family: "blackone";
+    src: url(../fonts/Black_Ops_One/BlackOpsOne-Regular.ttf);
+}
+
 .header_div{
     position: relative;
-    top: 0;
-
+    top:0;
+    width: 100%;
 }
 .content_div{
     position: relative;
-    top:20%;
+    margin-top:0;
 }
 .footer_div{
     position: relative;
-    top:90%
+    margin-top:0;
+    /* height: 15%; */
+    height:60px;
 }
 
+.headline{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    margin-top:40px;
+    font-family: "Kode_Mono";
+    font-size:80px;
+    font-weight: 900;
+    color: white;
+    text-align: center;
+}
+.headline_2{
+    position: absolute;
+    margin-top:40px;
+    font-family: "Kode_Mono";
+    font-size: 200px;
+    font-weight: 900;
+    color: white;
+    left: 30px;
+}
 .container{
     position: relative;
     margin-left: auto;
@@ -28,35 +80,85 @@ html, body{
     text-align: center;
 }
 .item_container{
-    display: inline-block;
-    width : 400px;
-    height : 500px;
-    margin: 100px;
+    width : 350px;
+    height : 450px;
     margin-top: 50px;
     background-color: white;
     border-radius: 30px;
     text-align: center;
     vertical-align: middle;
+    display: inline-block;
 }
 .item_img{
     position: relative;
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 350px;
-    height: 350px;
+    width: 320px;
+    height: 320px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
+    margin-top: 30px;
 }
+
 .item_title{
     position: relative;
-    margin: auto;
-    width:350px;
+    width: 350px;
     height: 100px;
-    margin-top:10px;
-    font-size: 30px;
-    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: xx-large;
+    font-weight: 400;
     color: black;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Silkscreen";
+}
+
+/*page 2 */
+.text_item{
+    color: white;
+    font-family: "silkscreen";
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+    margin: 0 0 0 30px;
+}
+
+
+
+
+
+/* default */
+
+
+.arrow{
+    width: 60px;
+    height: 60px;
+    background-image: url(../images/arrow.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    background-color: transparent;
+}
+#arrow_left{
+    position: fixed;
+    transform: rotate(180deg); 
+    top:375px; 
+    left:5px;
+}
+#arrow_right{
+    position: fixed;
+    top:375px; 
+    right:5px;
+}
+.button_home{
+    position: absolute;
+    background: url(../images/home.png) no-repeat;
+    background-size: contain;
+    border: 10px transparent;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 5px;
+    top: 0;
+    filter: invert(100%);
 }
