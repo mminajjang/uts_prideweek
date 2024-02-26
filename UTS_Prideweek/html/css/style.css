@@ -7,16 +7,32 @@ html, body{
     background-repeat: no-repeat;
     background-size: 1280px 800px;
 }
+.mask{
+    position: absolute;
+    display: none;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 9000;
+}
 /* FONTS */
 
 @font-face {
-    font-family: "Kode_Mono";
-    src: url(../fonts/Kode_Mono/static/KodeMono-Bold.ttf);
-    font-weight: 700;
+    font-family: "Kode mono";
+    src: url(../fonts/Kode_Mono/KodeMono-VariableFont_wght.ttf);
+    /* font-weight: 700; */
 }
 
 @font-face {
-    font-family: "Silkscreen";
+    font-family: "KodemonoReg";
+    src: url(../fonts/Kode_Mono/KodeMono-VariableFont_wght.ttf);
+    /* font-weight: 300; */
+}
+
+@font-face {
+    font-family: "silkscreen";
     src: url(../fonts/Silkscreen/Silkscreen-Regular.ttf);
     font-weight: 700;
 }
@@ -27,15 +43,6 @@ html, body{
     font-weight: 700;
 }
 
-@font-face {
-    font-family: "micro";
-    src: url(../fonts/Micro_5/Micro5-Regular.ttf);
-}
-
-@font-face {
-    font-family: "blackone";
-    src: url(../fonts/Black_Ops_One/BlackOpsOne-Regular.ttf);
-}
 
 .header_div{
     position: relative;
@@ -44,13 +51,12 @@ html, body{
 }
 .content_div{
     position: relative;
-    margin-top:0;
+    width: 100%;
 }
 .footer_div{
     position: relative;
-    margin-top:0;
-    /* height: 15%; */
     height:60px;
+    width: 100%;
 }
 
 .headline{
@@ -58,21 +64,33 @@ html, body{
     width:100%;
     height: 100%;
     margin-top:40px;
-    font-family: "Kode_Mono";
+    font-family: "Kode mono";
+    font-weight: bolder;
     font-size:80px;
-    font-weight: 900;
+    font-weight: bolder;
     color: white;
     text-align: center;
 }
 .headline_2{
     position: absolute;
     margin-top:40px;
-    font-family: "Kode_Mono";
+    font-family: "Kode mono";
+    font-weight: bolder;
     font-size: 200px;
     font-weight: 900;
     color: white;
-    left: 30px;
+    left: 70px;
 }
+.subheader{
+    color: white;
+    font-family: "Silkscreen";
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+    margin: 0 0 0 70px;
+
+}
+
 .container{
     position: relative;
     margin-left: auto;
@@ -80,6 +98,7 @@ html, body{
     text-align: center;
 }
 .item_container{
+    position: relative;
     width : 350px;
     height : 450px;
     margin-top: 50px;
@@ -96,35 +115,56 @@ html, body{
     background-size: cover;
     width: 320px;
     height: 320px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-}
+    margin: 30px auto 0 auto; 
 
+}
 .item_title{
     position: relative;
     width: 350px;
-    height: 100px;
-    margin-left: auto;
-    margin-right: auto;
+    height: 80px;
+    margin-top: -30px;
+    color: black;
+    vertical-align: middle;
+}
+.item_title>p{
     font-size: xx-large;
     font-weight: 400;
-    color: black;
     font-family: "Silkscreen";
 }
 
-/*page 2 */
-.text_item{
-    color: white;
-    font-family: "silkscreen";
-    font-size: 30px;
-    font-weight: 500;
-    color: white;
-    margin: 0 0 0 30px;
+.events{
+    position: relative;
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 300px;
+    height: 300px;
+    margin: 30px auto 0 auto;
 }
-
-
-
+.events_description{
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    width: 320px;
+    height: 50px;
+    top:420px;
+    vertical-align: middle;
+    text-align: left;
+}
+.events_description>div{
+    font-family: "Kode Mono";
+    font-weight: bolder;
+    text-align: left;
+    padding-left: 20px;
+}
+.events_description>p{
+    font-family: "KodemonoReg";
+    font-weight: lighter;
+    text-align: left;
+    margin-top:3px;
+    padding-left: 20px;
+}
 
 
 /* default */
@@ -138,6 +178,7 @@ html, body{
     background-size: contain;
     border: none;
     background-color: transparent;
+    filter: invert(100%);
 }
 #arrow_left{
     position: fixed;
