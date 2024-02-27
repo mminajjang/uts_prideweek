@@ -4,9 +4,28 @@ var session = new QiSession(function(session){
 }, function(){
     console.log("disconnected");
 });
-var flag = true;
+
+
+// *** SUBSCRIBE EVENT *** //
+var makesound = false;
+function eventDonecallback_human_tracked(state){
+    if(state ==-1){
+        makesound = false;
+    }
+    else{
+        makesound = true;
+    }
+}
+session.service("ALMemory").then(function(memory){
+    memory.subscriber("ALBasicAwareness/HumanTracked").then(function(subscriber){
+        subscriber.signal.connect(eventDonecallback_human_tracked);
+    });
+});
+
+// *** INITIALIZATION *** // 
+var once = true;
 $(document).ready( function(){
-    if(flag){
+    if(once){
         session.service("ALTextToSpeech").then(function(tts){
             tts.setParameter("speed", 80);
             tts.setParameter("pitchShift", 1.18);
@@ -15,10 +34,11 @@ $(document).ready( function(){
         session.service("ALBasicAwareness").then(function(basic){
             basic.setTrackingMode("Head");
         });
-        flag = false;
+        once = false;
     }
 });
 
+// *** PAGE CONFIGUARION *** //
 var current_page_number = 1;
 var min_page_num = 1;
 var max_page_num = 3;
@@ -44,9 +64,6 @@ function convertPage(dir){
                 '<p class="subheader" style="padding-top: 20px;">FACULTY OF ENGINEERING &#9825 IT</p>'+
                 '<p class="subheader" style="padding-top: 0;">UTS PRIDE WEEK 2024</p>'+
             '</div>'
-            // '<div class="footer_div">'+
-            //     '<button class="button_home"></button>'+
-            // '</div>'
             );
     }
     else if(current_page_number == 2){
@@ -66,9 +83,6 @@ function convertPage(dir){
                 '</div>'+
             '</div>'+
         '</div>'
-        // '<div class="footer_div">'+
-        //     '<button class="button_home"></button>'+
-        // '</div>'
         );
     }
     else if (current_page_number == 3){
@@ -104,9 +118,6 @@ function convertPage(dir){
                     '</div>'+
                 '</div>'  +      
             '</div>'
-            // '<div class="footer_div">'+
-            //     '<button class="button_home"></button>'+
-            // '</div>'
         );
     }
     speak(texts[current_page_number-1]);
@@ -127,25 +138,12 @@ function speak(text){
     }
 }
 
-var makesound = false;
-function eventDonecallback_human_tracked(state){
-    if(state ==-1){
-        makesound = false;
-    }
-    else{
-        makesound = true;
-    }
-}
-session.service("ALMemory").then(function(memory){
-    memory.subscriber("ALBasicAwareness/HumanTracked").then(function(subscriber){
-        subscriber.signal.connect(eventDonecallback_human_tracked);
-    });
-});
 function exit(){
     session.service("ALBehaviorManager").then(function(behaviour){
         behaviour.stopAllBehaviors();
     });
 }
+
 $(document).ready( function(){
     $(".button_home").click( function(){
         audio.play();
@@ -162,5 +160,4 @@ $(document).ready( function(){
         }
     });
     
-   
 });

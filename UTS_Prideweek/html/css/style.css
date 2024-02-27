@@ -7,39 +7,15 @@ html, body{
     background-repeat: no-repeat;
     background-size: 1280px 800px;
 }
-.mask{
-    position: absolute;
-    display: none;
-    top:0;
-    left:0;
-    width: 100%;
-    height:100%;
-    background-color: rgba(0,0,0,0.8);
-    z-index: 9000;
-}
 /* FONTS */
-
 @font-face {
     font-family: "Kode mono";
     src: url(../fonts/Kode_Mono/KodeMono-VariableFont_wght.ttf);
-    /* font-weight: 700; */
 }
 
 @font-face {
-    font-family: "KodemonoReg";
-    src: url(../fonts/Kode_Mono/KodeMono-VariableFont_wght.ttf);
-    /* font-weight: 300; */
-}
-
-@font-face {
-    font-family: "silkscreen";
+    font-family: "Silkscreen";
     src: url(../fonts/Silkscreen/Silkscreen-Regular.ttf);
-    font-weight: 700;
-}
-
-@font-face {
-    font-family: "SilkscreenBold";
-    src: url(../fonts/Silkscreen/Silkscreen-Bold.ttf);
     font-weight: 700;
 }
 
@@ -159,7 +135,7 @@ html, body{
     padding-left: 20px;
 }
 .events_description>p{
-    font-family: "KodemonoReg";
+    font-family: "Kodemono";
     font-weight: lighter;
     text-align: left;
     margin-top:3px;
@@ -168,8 +144,6 @@ html, body{
 
 
 /* default */
-
-
 .arrow{
     width: 60px;
     height: 60px;
