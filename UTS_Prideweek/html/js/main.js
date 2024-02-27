@@ -11,6 +11,10 @@ $(document).ready( function(){
             tts.setParameter("speed", 80);
             tts.setParameter("pitchShift", 1.18);
         });
+
+        session.service("ALBasicAwareness").then(function(basic){
+            basic.setTrackingMode("Head");
+        });
         flag = false;
     }
 });
@@ -87,7 +91,7 @@ function convertPage(dir){
                         '<div class="item_title" style="padding-top: 20px; font-size: 70px; color: red;"><p>Drag Bingo</p></div>'+
                         '<div class="events_description">'+
                             '<div>Thursday 29 Feb, 12-1 pm</div>'+
-                            '<p>Drag Bingo will be hosted by the fabulous Ms Prada Clutch with prizes to be won.</p>'+
+                            '<p>Drag Bingo will be hosted by the fabulous Ms Prada Clutch with prizes to be won. <br> Register now! Limite one per person. </p>'+
                         '</div>'+
                     '</div>'+
                     '<div class="item_container" style="margin-top:0px; margin-left:30px; height: 570px;">'+
@@ -95,7 +99,7 @@ function convertPage(dir){
                         '<div class="item_title" style="color: green;"><p>LGBTQIA+ UTS Student Groups</p></div>'+
                         '<div class="events_description">'+
                             '<div>Friday 1 Mar, 1-2 pm</div>'+
-                            '<p>Come along and meet the UTS Darlings. Drop by and find out about these student Group</p>'+
+                            '<p>Come along and meet the UTS Darlings. Drop by and find out about these student groups and how they supprot LGBTQIA+ students on campus.</p>'+
                         '</div>'+
                     '</div>'+
                 '</div>'  +      
